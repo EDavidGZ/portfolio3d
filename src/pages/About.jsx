@@ -22,8 +22,7 @@ const About = () => {
 
       <div className='mt-5 flex flex-col gap-3 text-slate-500'>
         <p>
-          Software Engineer based in Mexico, specializing in technical
-          education through hands-on learning and building applications.
+        Software Engineer from Mexico, focused on learning by doing and creating applications.
         </p>
       </div>
 

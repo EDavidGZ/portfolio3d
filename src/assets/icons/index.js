@@ -11,6 +11,7 @@ import nextjs from './nextjs.svg'
 import nodejs from './nodejs.svg'
 import react from './react.svg'
 import redux from './redux.svg'
+import python from './python.svg'
 import sass from './sass.svg'
 import tailwindcss from './tailwindcss.svg'
 import typescript from './typescript.svg'
@@ -55,5 +56,6 @@ export {
     arrow,
     contact,
     soundon,
-    soundoff
+    soundoff,
+    python,
 }

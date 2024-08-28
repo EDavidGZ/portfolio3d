@@ -3,9 +3,12 @@ import { Canvas } from "@react-three/fiber";
 import { Suspense, useRef, useState } from "react";
 
 import { Fox } from "../models/Fox";
+import { Patricio } from "../models/Patricio";
+
 import useAlert from "../hooks/useAlert";
 import  Alert  from "../components/Alert";
 import  Loader  from "../components/Loader";
+import { OrbitControls } from "@react-three/drei";
 
 const Contact = () => {
   const formRef = useRef();
@@ -28,8 +31,8 @@ const Contact = () => {
 
     emailjs
       .send(
-        'service_i0h9s46',
-        'template_dalnjhf',
+        'service_eea46k8',
+        'template_mukkdk4',
         {
           from_name: form.name,
           to_name: "Efren",
@@ -37,7 +40,7 @@ const Contact = () => {
           to_email: "jgar05202415@gmail.com",
           message: form.message,
         },
-        'MuDdQPwu7dTJxkzOi'
+        'uB2gGvEu4qXK3NK64'
       )
       .then(
         () => {
@@ -139,32 +142,13 @@ const Contact = () => {
       </div>
 
       <div className='lg:w-1/2 w-full lg:h-auto md:h-[550px] h-[350px]'>
-        <Canvas
-          camera={{
-            position: [0, 0, 5],
-            fov: 75,
-            near: 0.1,
-            far: 1000,
-          }}
-        >
-          <directionalLight position={[0, 0, 1]} intensity={2.5} />
-          <ambientLight intensity={1} />
-          <pointLight position={[5, 10, 0]} intensity={2} />
-          <spotLight
-            position={[10, 10, 10]}
-            angle={0.15}
-            penumbra={1}
-            intensity={2}
-          />
+      <Canvas camera={{ zoom: 4, position: [25,4, -45] }} >
+          <ambientLight intensity={2} />
+          <Suspense fallback={null}>
+            <Patricio />
 
-          <Suspense fallback={<Loader />}>
-            <Fox
-              currentAnimation={currentAnimation}
-              position={[0.5, 0.35, 0]}
-              rotation={[12.629, -0.6, 0]}
-              scale={[0.5, 0.5, 0.5]}
-            />
           </Suspense>
+          <OrbitControls />
         </Canvas>
       </div>
     </section>
